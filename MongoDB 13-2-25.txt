@@ -1,0 +1,13 @@
+select * from worker order by first_name asc;
+SELECT * FROM Worker ORDER BY FIRST_NAME ASC, DEPARTMENT DESC;
+SELECT * FROM Worker WHERE FIRST_NAME NOT IN ('Vipul', 'Satish');
+select * from worker where first_name like "_____h";
+SELECT COUNT(*) AS Admin_Employee_Count FROM Worker WHERE DEPARTMENT = 'Admin';
+SELECT FIRST_NAME, LAST_NAME FROM Worker WHERE SALARY BETWEEN 50000 AND 100000;
+SELECT DEPARTMENT, COUNT(*) AS Worker_Count FROM Worker GROUP BY DEPARTMENT ORDER BY Worker_Count DESC;
+SELECT SALARY FROM (
+    SELECT DISTINCT SALARY 
+    FROM Worker 
+    ORDER BY SALARY DESC
+) AS SalaryRank LIMIT 1 OFFSET 4;
+SELECT SALARY FROM Worker GROUP BY SALARY HAVING COUNT(*) > 1;
